@@ -10,11 +10,11 @@ app = Flask(__name__)
 def get_services():
     data = request.get_json()
     print(data)
-    user_query = data['user_query']
+    user_query = data['content']
     response = get_response(user_query)
     print(response)
 
-    return jsonify({'message': 'success'})
+    return jsonify({'message': response})
 
 
 if __name__ == '__main__':
