@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import request, jsonify
 
-from app2 import get_response
+from app import run_conversation
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ def get_services():
     data = request.get_json()
     print(data)
     user_query = data['content']
-    response = get_response(user_query)
+    response = run_conversation(user_query)
     print(response)
 
     return jsonify({'message': response})
